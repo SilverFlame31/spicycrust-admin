@@ -1,0 +1,7177 @@
+/* =========================================
+   SPICYCRUST ADMIN
+   SHARED VISUAL SYSTEM
+========================================= */
+
+:root {
+    --wood-black: #120906;
+    --wood-dark: #1d0e08;
+    --wood: #30170d;
+    --wood-light: #542b18;
+
+    --paper-light: #f8e6ba;
+    --paper: #f0d49a;
+    --paper-dark: #d9b670;
+
+    --red: #bd3322;
+    --red-bright: #d8402b;
+    --red-dark: #791b13;
+
+    --orange: #dd812a;
+    --gold: #dca83f;
+
+    --green: #66863a;
+    --green-dark: #3c5723;
+
+    --brown: #321b10;
+    --brown-light: #6e4427;
+
+    --cream: #fff0cc;
+    --white: #fffdf5;
+
+    --border: #a66e36;
+
+    --shadow:
+        0 7px 18px rgba(0, 0, 0, 0.34);
+
+    --shadow-small:
+        0 3px 8px rgba(0, 0, 0, 0.25);
+
+    --radius:
+        10px;
+}
+
+
+/* =========================================
+   REINICIO
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:
+        var(--brown);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(98, 49, 23, 0.22),
+            transparent 38%
+        ),
+        linear-gradient(
+            rgba(18, 8, 5, 0.94),
+            rgba(18, 8, 5, 0.97)
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #211008 0,
+            #211008 90px,
+            #2a150c 90px,
+            #2a150c 180px
+        );
+
+    background-attachment:
+        fixed;
+}
+
+
+/* IMPORTANT:
+   prevents CSS flex rules from overriding
+   HTML hidden attributes.
+*/
+
+[hidden] {
+    display: none !important;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   ENCABEZADO ADMIN
+========================================= */
+
+body > header,
+.admin-header {
+    width:
+        min(1400px, calc(100% - 40px));
+
+    margin:
+        18px auto 0;
+
+    min-height:
+        84px;
+
+    padding:
+        13px 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2b160d,
+            #160a06
+        );
+
+    border:
+        1px solid #54301b;
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+/* =========================================
+   MARCA
+========================================= */
+
+.admin-brand {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-shrink:
+        0;
+}
+
+
+.admin-brand-mark {
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    font-size:
+        1.8rem;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(201, 123, 35, 0.14);
+
+    border:
+        1px solid
+        rgba(211, 154, 61, 0.3);
+}
+
+
+.admin-brand h1,
+body > header h1 {
+    margin:
+        0;
+
+    color:
+        #fff5db;
+
+    font-size:
+        clamp(1.5rem, 2vw, 2.1rem);
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        1px;
+
+    text-shadow:
+        2px 2px 0
+        var(--red-dark);
+}
+
+
+.admin-brand p {
+    display:
+        inline-block;
+
+    margin:
+        7px 0 0;
+
+    padding:
+        3px 9px;
+
+    color:
+        #f6c760;
+
+    background:
+        #4a2a14;
+
+    border:
+        1px solid #855123;
+
+    border-radius:
+        4px;
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+body > header nav,
+.admin-nav {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        5px;
+
+    padding:
+        5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--paper-light),
+            var(--paper)
+        );
+
+    border:
+        2px solid
+        var(--border);
+
+    border-radius:
+        8px;
+
+    box-shadow:
+        inset 0 0 12px
+        rgba(96, 50, 19, 0.12);
+}
+
+
+body > header nav a,
+.admin-nav a {
+    padding:
+        9px 13px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        5px;
+
+    color:
+        var(--brown);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    white-space:
+        nowrap;
+
+    transition:
+        0.15s ease;
+}
+
+
+body > header nav a:hover,
+.admin-nav a:hover {
+    color:
+        var(--red-dark);
+
+    background:
+        rgba(255, 249, 228, 0.65);
+
+    border-color:
+        rgba(166, 110, 54, 0.6);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.admin-nav a.active {
+    color:
+        var(--red);
+
+    background:
+        #fff0cd;
+
+    border-color:
+        var(--red);
+
+    box-shadow:
+        inset 0 -2px 0
+        rgba(189, 51, 34, 0.13);
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+main {
+    width:
+        min(1400px, calc(100% - 40px));
+
+    margin:
+        18px auto 35px;
+}
+
+
+/* =========================================
+   PANEL DE PERGAMINO GENÉRICO
+========================================= */
+
+main section {
+    position:
+        relative;
+
+    margin-bottom:
+        16px;
+
+    padding:
+        18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--paper-light),
+            var(--paper)
+        );
+
+    border:
+        2px solid
+        var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+main section::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        6px;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    border:
+        1px dashed
+        rgba(91, 53, 25, 0.18);
+
+    border-radius:
+        7px;
+}
+
+
+main section > * {
+    position:
+        relative;
+
+    z-index:
+        1;
+}
+
+
+/* =========================================
+   TÍTULO DE PÁGINA
+========================================= */
+
+.page-title-section {
+    padding:
+        14px 20px;
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    box-shadow:
+        none;
+
+    color:
+        var(--cream);
+}
+
+
+.page-title-section::before {
+    display:
+        none;
+}
+
+
+.page-title-section h2 {
+    margin:
+        2px 0 3px;
+
+    color:
+        var(--cream);
+
+    font-size:
+        clamp(1.6rem, 2.7vw, 2.6rem);
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        2px 3px 0
+        rgba(0, 0, 0, 0.75);
+}
+
+
+.page-title-section p {
+    margin:
+        0;
+
+    color:
+        #cba769;
+
+    font-size:
+        0.9rem;
+}
+
+
+.eyebrow {
+    color:
+        var(--gold);
+
+    font-size:
+        0.67rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================
+   ESTADÍSTICAS
+========================================= */
+
+.stats-section {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        12px;
+
+    padding:
+        0;
+
+    background:
+        none;
+
+    border:
+        none;
+
+    box-shadow:
+        none;
+}
+
+
+.stats-section::before {
+    display:
+        none;
+}
+
+
+.stat-card {
+    position:
+        relative;
+
+    min-height:
+        105px;
+
+    padding:
+        15px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8e7bd,
+            #e7c684
+        );
+
+    border:
+        2px solid
+        var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow-small);
+}
+
+
+.stat-card::after {
+    content:
+        "🍕";
+
+    position:
+        absolute;
+
+    right:
+        8px;
+
+    bottom:
+        -10px;
+
+    font-size:
+        3rem;
+
+    opacity:
+        0.1;
+
+    transform:
+        rotate(-15deg);
+}
+
+
+.stat-icon {
+    width:
+        50px;
+
+    height:
+        50px;
+
+    flex:
+        0 0 50px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        2px dashed
+        rgba(140, 58, 34, 0.55);
+
+    border-radius:
+        50%;
+
+    font-size:
+        1.55rem;
+
+    background:
+        rgba(255, 245, 214, 0.55);
+}
+
+
+.stat-card h3 {
+    margin:
+        0 0 3px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        0.72rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.6px;
+}
+
+
+.stat-card p {
+    margin:
+        0;
+
+    color:
+        var(--brown);
+
+    font-size:
+        clamp(1.5rem, 2.2vw, 2.2rem);
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
+}
+
+
+.stat-card small {
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.67rem;
+}
+
+
+/* =========================================
+   FILTROS
+========================================= */
+
+.filters-section {
+    display:
+        grid;
+
+    grid-template-columns:
+        0.9fr
+        1fr
+        1.15fr
+        0.8fr
+        1.45fr;
+
+    align-items:
+        end;
+
+    gap:
+        12px;
+
+    padding:
+        16px;
+}
+
+
+.filter-item {
+    min-width:
+        0;
+}
+
+
+.filter-item label,
+label {
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        0.68rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.5px;
+
+    text-transform:
+        uppercase;
+}
+
+
+input,
+select,
+textarea {
+    width:
+        100%;
+
+    min-height:
+        40px;
+
+    padding:
+        8px 10px;
+
+    border:
+        2px solid
+        #c99451;
+
+    border-radius:
+        6px;
+
+    outline:
+        none;
+
+    background:
+        rgba(255, 244, 213, 0.88);
+
+    color:
+        var(--brown);
+
+    font:
+        inherit;
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        600;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color:
+        var(--red);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(189, 51, 34, 0.12);
+}
+
+
+textarea {
+    min-height:
+        90px;
+
+    resize:
+        vertical;
+}
+
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+    opacity:
+        0.55;
+
+    cursor:
+        not-allowed;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+button {
+    padding:
+        8px 13px;
+
+    border:
+        2px solid
+        var(--red-dark);
+
+    border-radius:
+        6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--red-bright),
+            var(--red)
+        );
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.3px;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 3px 0
+        var(--red-dark);
+
+    transition:
+        filter 0.12s ease,
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+
+button:hover:not(:disabled) {
+    filter:
+        brightness(1.08);
+
+    transform:
+        translateY(-1px);
+}
+
+
+button:active:not(:disabled) {
+    transform:
+        translateY(2px);
+
+    box-shadow:
+        0 1px 0
+        var(--red-dark);
+}
+
+
+button:disabled {
+    opacity:
+        0.55;
+
+    cursor:
+        not-allowed;
+}
+
+
+/* =========================================
+   BARRA DE EXPORTACIÓN DE JUGADORES
+========================================= */
+
+.players-toolbar {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        12px 16px;
+}
+
+
+.toolbar-label {
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+#playersCount {
+    font-size:
+        1.1rem;
+}
+
+
+/* =========================================
+   DASHBOARD DE DOS COLUMNAS
+========================================= */
+
+.leaderboard-dashboard {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(360px, 0.65fr);
+
+    gap:
+        16px;
+
+    align-items:
+        start;
+}
+
+
+/* =========================================
+   ENCABEZADO DE SECCIÓN
+========================================= */
+
+.section-heading {
+    min-height:
+        58px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    margin-bottom:
+        12px;
+}
+
+
+.section-heading h3,
+.player-details-header h3 {
+    margin:
+        2px 0 0;
+
+    color:
+        var(--brown);
+
+    font-size:
+        1.55rem;
+
+    line-height:
+        1;
+
+    text-transform:
+        uppercase;
+}
+
+
+.section-kicker {
+    display:
+        inline-block;
+
+    padding:
+        3px 9px;
+
+    color:
+        #fff7dc;
+
+    background:
+        var(--green);
+
+    border-radius:
+        3px;
+
+    font-size:
+        0.61rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.5px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.fresh-stamp {
+    width:
+        55px;
+
+    height:
+        55px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    text-align:
+        center;
+
+    color:
+        rgba(99, 72, 41, 0.55);
+
+    border:
+        2px dashed
+        rgba(99, 72, 41, 0.38);
+
+    border-radius:
+        50%;
+
+    font-size:
+        0.58rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        0.9;
+
+    transform:
+        rotate(10deg);
+}
+
+
+/* =========================================
+   CONTENEDOR DE TABLA
+========================================= */
+
+.table-container {
+    width:
+        100%;
+
+    overflow-x:
+        auto;
+
+    border-radius:
+        7px;
+}
+
+
+/* =========================================
+   TABLA
+========================================= */
+
+table {
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    font-size:
+        0.84rem;
+}
+
+
+thead {
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            180deg,
+            #c43a27,
+            #992719
+        );
+}
+
+
+th {
+    padding:
+        10px 11px;
+
+    text-align:
+        left;
+
+    color:
+        white;
+
+    font-size:
+        0.67rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.4px;
+
+    text-transform:
+        uppercase;
+}
+
+
+td {
+    padding:
+        10px 11px;
+
+    vertical-align:
+        middle;
+
+    border-bottom:
+        1px dashed
+        rgba(70, 40, 20, 0.22);
+}
+
+
+tbody tr {
+    background:
+        rgba(255, 248, 226, 0.2);
+
+    transition:
+        background 0.12s ease;
+}
+
+
+tbody tr:hover {
+    background:
+        rgba(255, 255, 255, 0.35);
+}
+
+
+tbody tr:last-child td {
+    border-bottom:
+        none;
+}
+
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+.leaderboard-section {
+    min-width:
+        0;
+
+    margin-bottom:
+        0;
+
+    padding:
+        16px;
+}
+
+
+/* TOP 3 */
+
+.leaderboard-section tbody tr:nth-child(1) td:first-child::before {
+    content:
+        "🥇";
+
+    margin-right:
+        7px;
+}
+
+
+.leaderboard-section tbody tr:nth-child(2) td:first-child::before {
+    content:
+        "🥈";
+
+    margin-right:
+        7px;
+}
+
+
+.leaderboard-section tbody tr:nth-child(3) td:first-child::before {
+    content:
+        "🥉";
+
+    margin-right:
+        7px;
+}
+
+
+/* nombres de jugadores */
+
+.leaderboard-section tbody td:nth-child(2) {
+    font-weight:
+        700;
+}
+
+
+/* puntaje */
+
+.leaderboard-section tbody td:nth-child(3) {
+    color:
+        var(--red-dark);
+
+    font-weight:
+        900;
+}
+
+
+/* =========================================
+   PANEL DE DETALLES DEL JUGADOR
+========================================= */
+
+.player-details-panel,
+.player-details-placeholder {
+    min-width:
+        0;
+
+    margin-bottom:
+        0;
+
+    padding:
+        16px;
+
+    border-color:
+        var(--border);
+}
+
+
+.player-details-header {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    margin-bottom:
+        16px;
+}
+
+
+.close-details-button {
+    width:
+        32px;
+
+    height:
+        32px;
+
+    padding:
+        0;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        50%;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        1.2rem;
+
+    line-height:
+        1;
+}
+
+
+/* =========================================
+   PERFIL DEL JUGADOR
+========================================= */
+
+.player-profile {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding-bottom:
+        14px;
+
+    border-bottom:
+        1px dashed
+        rgba(77, 45, 22, 0.3);
+}
+
+
+.player-avatar {
+    width:
+        62px;
+
+    height:
+        62px;
+
+    flex:
+        0 0 62px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        3px solid
+        var(--red-dark);
+
+    border-radius:
+        50%;
+
+    background:
+        #f5c665;
+
+    font-size:
+        2.2rem;
+
+    box-shadow:
+        var(--shadow-small);
+}
+
+
+.player-label {
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+.player-profile h4 {
+    margin:
+        0;
+
+    color:
+        var(--brown);
+
+    font-size:
+        1.5rem;
+}
+
+
+/* =========================================
+   INFORMACIÓN DEL JUGADOR
+========================================= */
+
+.player-info-list {
+    margin:
+        13px 0;
+}
+
+
+.player-info-row {
+    display:
+        grid;
+
+    grid-template-columns:
+        30px 1fr;
+
+    gap:
+        9px;
+
+    align-items:
+        center;
+
+    padding:
+        8px 0;
+
+    border-bottom:
+        1px dashed
+        rgba(78, 44, 21, 0.22);
+}
+
+
+.player-info-icon {
+    font-size:
+        1rem;
+
+    text-align:
+        center;
+}
+
+
+.player-info-label {
+    display:
+        block;
+
+    margin-bottom:
+        2px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        0.59rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+.player-info-row strong {
+    overflow-wrap:
+        anywhere;
+
+    font-size:
+        0.8rem;
+}
+
+
+/* =========================================
+   HISTORIAL
+========================================= */
+
+.score-history {
+    margin-top:
+        15px;
+}
+
+
+.history-heading {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    margin-bottom:
+        9px;
+}
+
+
+.history-heading h4 {
+    margin:
+        0;
+
+    color:
+        var(--green-dark);
+
+    font-size:
+        0.9rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.score-history table {
+    font-size:
+        0.68rem;
+}
+
+
+.score-history th {
+    padding:
+        7px 6px;
+
+    font-size:
+        0.54rem;
+}
+
+
+.score-history td {
+    padding:
+        7px 6px;
+}
+
+
+.score-history button {
+    padding:
+        5px 7px;
+
+    font-size:
+        0.55rem;
+}
+
+
+/* =========================================
+   PLACEHOLDER DE DETALLES
+========================================= */
+
+.player-details-placeholder {
+    min-height:
+        330px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+}
+
+
+.placeholder-pizza {
+    margin-bottom:
+        9px;
+
+    font-size:
+        4rem;
+
+    filter:
+        drop-shadow(
+            0 5px 5px
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+.player-details-placeholder h3 {
+    margin:
+        0 0 8px;
+
+    color:
+        var(--brown);
+
+    text-transform:
+        uppercase;
+}
+
+
+.player-details-placeholder p {
+    max-width:
+        290px;
+
+    margin:
+        0;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.8rem;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================
+   ENCABEZADOS GENÉRICOS
+========================================= */
+
+h3 {
+    color:
+        var(--brown);
+}
+
+
+h4 {
+    color:
+        var(--green-dark);
+}
+
+
+/* =========================================
+   FORMULARIOS ADMIN - OTRAS PÁGINAS
+========================================= */
+
+form {
+    display:
+        flex;
+
+    align-items:
+        end;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+}
+
+
+form label {
+    min-width:
+        150px;
+
+    flex:
+        1;
+}
+
+
+/* =========================================
+   ETIQUETAS DE ESTADO
+========================================= */
+
+.status-active {
+    display:
+        inline-block;
+
+    padding:
+        4px 8px;
+
+    color:
+        white;
+
+    background:
+        var(--green);
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+.status-inactive {
+    display:
+        inline-block;
+
+    padding:
+        4px 8px;
+
+    color:
+        white;
+
+    background:
+        #766755;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.admin-footer {
+    width:
+        min(1400px, calc(100% - 40px));
+
+    margin:
+        0 auto 20px;
+
+    padding:
+        10px 15px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    color:
+        #bf975e;
+
+    border-top:
+        1px solid
+        rgba(180, 117, 53, 0.35);
+
+    font-size:
+        0.68rem;
+}
+
+
+/* =========================================
+   BASE DE LA PÁGINA DE EVENTO
+========================================= */
+
+.event-page {
+    width:
+        min(1300px, calc(100% - 40px));
+
+    margin:
+        20px auto;
+}
+
+
+.event-header {
+    margin-bottom:
+        15px;
+
+    text-align:
+        center;
+
+    color:
+        var(--cream);
+}
+
+
+.event-header h1 {
+    margin:
+        0;
+
+    color:
+        var(--gold);
+
+    font-size:
+        clamp(2.2rem, 4vw, 4.5rem);
+
+    text-shadow:
+        3px 3px 0
+        var(--red-dark);
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-header h2 {
+    margin:
+        3px 0;
+
+    color:
+        white;
+}
+
+
+.event-info {
+    text-align:
+        center;
+}
+
+
+.event-info h2 {
+    margin:
+        0;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        clamp(1.8rem, 3.2vw, 3.5rem);
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-info p {
+    color:
+        var(--green-dark);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        900;
+}
+
+
+.event-footer {
+    color:
+        var(--cream);
+
+    text-align:
+        center;
+}
+
+
+/* =========================================
+   ESTADO DEL MODO EVENTO
+========================================= */
+
+#eventModeStatus {
+    text-align:
+        center;
+
+    color:
+        #ffd56b;
+
+    background:
+        linear-gradient(
+            180deg,
+            #4b2616,
+            #241109
+        );
+
+    border-color:
+        #7c4923;
+}
+
+
+#eventRotationStatus {
+    font-weight:
+        900;
+}
+
+
+#eventModeExitContainer {
+    text-align:
+        center;
+}
+
+
+/* =========================================
+   EVENTO EN PANTALLA COMPLETA
+========================================= */
+
+:fullscreen {
+    background:
+        var(--wood-black);
+}
+
+
+:fullscreen .event-page {
+    width:
+        100%;
+
+    max-width:
+        none;
+
+    min-height:
+        100vh;
+
+    margin:
+        0;
+
+    padding:
+        20px 5vw;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #3c1c0f,
+            #130806 75%
+        );
+}
+
+
+:fullscreen .event-leaderboard {
+    max-width:
+        1000px;
+
+    margin:
+        0 auto;
+}
+
+
+:fullscreen .event-leaderboard td {
+    padding:
+        14px 17px;
+
+    font-size:
+        clamp(1.15rem, 1.7vw, 1.75rem);
+}
+
+
+:fullscreen .event-leaderboard th {
+    font-size:
+        0.95rem;
+}
+
+
+:fullscreen #eventGameTitle {
+    font-size:
+        clamp(2.7rem, 5vw, 5rem);
+}
+
+
+:fullscreen #eventSeasonTitle {
+    font-size:
+        clamp(1.3rem, 2.5vw, 2.2rem);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLAT
+========================================= */
+
+@media (
+    max-width: 1050px
+) {
+
+    .leaderboard-dashboard {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .player-details-placeholder {
+        min-height:
+            200px;
+    }
+
+
+    .filters-section {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .filter-search {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .stats-section {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+========================================= */
+
+@media (
+    max-width: 700px
+) {
+
+    body > header,
+    .admin-header {
+        width:
+            calc(100% - 20px);
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+
+    .admin-brand {
+        justify-content:
+            center;
+    }
+
+
+    .admin-nav {
+        width:
+            100%;
+    }
+
+
+    .admin-nav a {
+        flex:
+            1 1 45%;
+
+        text-align:
+            center;
+    }
+
+
+    main {
+        width:
+            calc(100% - 20px);
+    }
+
+
+    .stats-section {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .filters-section {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .filter-search {
+        grid-column:
+            auto;
+    }
+
+
+    .players-toolbar {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+
+    .admin-footer {
+        width:
+            calc(100% - 20px);
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        gap:
+            4px;
+    }
+
+
+    main section {
+        padding:
+            13px;
+    }
+
+
+    th,
+    td {
+        padding:
+            8px 7px;
+    }
+}
+
+/* =========================================
+   ADMINISTRACIÓN DE JUEGOS
+========================================= */
+
+.games-dashboard {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(300px, 0.72fr)
+        minmax(0, 1.28fr);
+
+    gap:
+        16px;
+
+    align-items:
+        start;
+}
+
+
+/* =========================================
+   PANEL PARA CREAR JUEGO
+========================================= */
+
+.game-create-panel {
+    grid-column:
+        1;
+
+    grid-row:
+        1;
+}
+
+
+.game-create-panel form {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        13px;
+
+    align-items:
+        start;
+}
+
+
+.game-create-panel form label {
+    min-width:
+        0;
+
+    margin:
+        0;
+}
+
+
+.game-create-panel .full-field {
+    grid-column:
+        1 / -1;
+}
+
+
+.game-create-panel textarea {
+    min-height:
+        95px;
+}
+
+
+.form-submit-area {
+    display:
+        flex;
+
+    align-items:
+        end;
+
+    height:
+        100%;
+}
+
+
+.form-submit-area button {
+    width:
+        100%;
+
+    min-height:
+        40px;
+}
+
+
+.panel-description {
+    margin:
+        -3px 0 16px;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.78rem;
+
+    line-height:
+        1.5;
+}
+
+
+.field-help {
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.35;
+
+    text-transform:
+        none;
+}
+
+
+/* =========================================
+   MENSAJE DE JUEGO
+========================================= */
+
+.admin-message {
+    min-height:
+        18px;
+
+    margin-top:
+        12px;
+
+    color:
+        var(--brown);
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        700;
+}
+
+
+.admin-message[data-state="success"] {
+    color:
+        var(--green-dark);
+}
+
+
+.admin-message[data-state="error"] {
+    color:
+        var(--red-dark);
+}
+
+
+/* =========================================
+   PANEL DE API KEY
+========================================= */
+
+.api-key-panel {
+    grid-column:
+        1;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        54px 1fr;
+
+    gap:
+        14px;
+
+    border-color:
+        var(--green-dark);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8e5ae,
+            #e3c17c
+        );
+}
+
+
+.api-key-icon {
+    width:
+        54px;
+
+    height:
+        54px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        2px dashed
+        var(--green-dark);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255, 246, 210, 0.5);
+
+    font-size:
+        1.6rem;
+}
+
+
+.api-key-content {
+    min-width:
+        0;
+}
+
+
+.api-key-content h3 {
+    margin:
+        5px 0 7px;
+
+    font-size:
+        1.45rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.api-key-content p {
+    margin:
+        0 0 12px;
+
+    font-size:
+        0.76rem;
+
+    line-height:
+        1.45;
+}
+
+
+.api-key-warning {
+    margin:
+        10px 0 13px;
+
+    padding:
+        9px 10px;
+
+    color:
+        #fff4d2;
+
+    background:
+        var(--red-dark);
+
+    border-radius:
+        5px;
+
+    font-size:
+        0.68rem;
+
+    line-height:
+        1.4;
+}
+
+
+#generatedApiKey {
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.7rem;
+}
+
+
+.secondary-button {
+    margin-top:
+        9px;
+
+    color:
+        var(--cream);
+
+    background:
+        linear-gradient(
+            180deg,
+            #607e38,
+            var(--green-dark)
+        );
+
+    border-color:
+        #2e421c;
+
+    box-shadow:
+        0 3px 0 #2e421c;
+}
+
+
+/* =========================================
+   LISTA DE JUEGOS
+========================================= */
+
+.games-list-panel {
+    grid-column:
+        2;
+
+    grid-row:
+        1 / span 2;
+
+    min-width:
+        0;
+}
+
+
+.games-list-panel table {
+    table-layout:
+        auto;
+}
+
+
+.games-list-panel td:nth-child(1) {
+    min-width:
+        125px;
+
+    font-weight:
+        900;
+}
+
+
+.games-list-panel td:nth-child(2) {
+    color:
+        var(--red-dark);
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.72rem;
+}
+
+
+.games-list-panel td:nth-child(3) {
+    min-width:
+        170px;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.75rem;
+
+    line-height:
+        1.4;
+}
+
+
+.games-list-panel td:nth-child(5) {
+    text-align:
+        center;
+
+    font-weight:
+        900;
+}
+
+
+.games-list-panel td:last-child {
+    white-space:
+        nowrap;
+}
+
+
+.games-list-panel td:last-child button {
+    margin:
+        2px;
+}
+
+
+/* =========================================
+   NOTA INFORMATIVA
+========================================= */
+
+.menu-note {
+    margin-top:
+        14px;
+
+    padding:
+        10px 12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    color:
+        var(--brown-light);
+
+    background:
+        rgba(255, 247, 219, 0.4);
+
+    border:
+        1px dashed
+        rgba(92, 53, 26, 0.35);
+
+    border-radius:
+        6px;
+}
+
+
+.menu-note span {
+    flex:
+        0 0 auto;
+
+    font-size:
+        1.25rem;
+}
+
+
+.menu-note p {
+    margin:
+        0;
+
+    font-size:
+        0.67rem;
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================
+   JUEGOS - RESPONSIVE
+========================================= */
+
+@media (
+    max-width: 1100px
+) {
+
+    .games-dashboard {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .game-create-panel,
+    .api-key-panel,
+    .games-list-panel {
+        grid-column:
+            1;
+
+        grid-row:
+            auto;
+    }
+}
+
+
+@media (
+    max-width: 650px
+) {
+
+    .game-create-panel form {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .game-create-panel .full-field {
+        grid-column:
+            auto;
+    }
+
+
+    .api-key-panel {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .api-key-icon {
+        margin:
+            0 auto;
+    }
+}
+
+/* =========================================
+   ADMINISTRACIÓN DE TEMPORADAS
+========================================= */
+
+.seasons-dashboard {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(300px, 0.72fr)
+        minmax(0, 1.28fr);
+
+    gap:
+        16px;
+
+    align-items:
+        start;
+}
+
+
+/* =========================================
+   CREAR TEMPORADA
+========================================= */
+
+.season-create-panel {
+    grid-column:
+        1;
+
+    grid-row:
+        1;
+}
+
+
+.season-create-panel form {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        13px;
+
+    align-items:
+        start;
+}
+
+
+.season-create-panel form label {
+    min-width:
+        0;
+
+    margin:
+        0;
+}
+
+
+.season-create-panel input,
+.season-create-panel select {
+    margin-top:
+        0;
+}
+
+
+/* =========================================
+   INFORMACIÓN DE TEMPORADA
+========================================= */
+
+.season-info-panel {
+    grid-column:
+        1;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        52px 1fr;
+
+    gap:
+        14px;
+
+    align-items:
+        start;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8e5ae,
+            #e3c17c
+        );
+}
+
+
+.season-info-icon {
+    width:
+        52px;
+
+    height:
+        52px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        2px dashed
+        var(--green-dark);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255, 247, 216, 0.5);
+
+    font-size:
+        1.5rem;
+}
+
+
+.season-info-panel h3 {
+    margin:
+        5px 0 12px;
+
+    font-size:
+        1.25rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.season-info-panel p {
+    margin:
+        12px 0 0;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.7rem;
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================
+   CICLO DE TEMPORADA
+========================================= */
+
+.season-flow {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        5px;
+}
+
+
+.season-flow-step {
+    min-width:
+        48px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    text-align:
+        center;
+}
+
+
+.season-flow-step strong {
+    width:
+        30px;
+
+    height:
+        30px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    color:
+        white;
+
+    background:
+        var(--red);
+
+    border:
+        2px solid
+        var(--red-dark);
+
+    border-radius:
+        50%;
+
+    font-size:
+        0.72rem;
+
+    box-shadow:
+        0 2px 0
+        var(--red-dark);
+}
+
+
+.season-flow-step span {
+    color:
+        var(--brown);
+
+    font-size:
+        0.57rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+.season-flow-arrow {
+    color:
+        var(--green-dark);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        900;
+}
+
+
+/* =========================================
+   LISTA DE TEMPORADAS
+========================================= */
+
+.seasons-list-panel {
+    grid-column:
+        2;
+
+    grid-row:
+        1 / span 2;
+
+    min-width:
+        0;
+}
+
+
+.seasons-list-panel td:nth-child(1) {
+    min-width:
+        130px;
+
+    font-weight:
+        900;
+}
+
+
+.seasons-list-panel td:nth-child(2) {
+    color:
+        var(--red-dark);
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.7rem;
+}
+
+
+.seasons-list-panel td:nth-child(3),
+.seasons-list-panel td:nth-child(4) {
+    min-width:
+        105px;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.7rem;
+}
+
+
+.seasons-list-panel td:nth-child(6) {
+    text-align:
+        center;
+
+    font-weight:
+        900;
+}
+
+
+.seasons-list-panel td:last-child {
+    min-width:
+        120px;
+
+    white-space:
+        nowrap;
+}
+
+
+.seasons-list-panel td:last-child button {
+    margin:
+        2px;
+}
+
+
+/* =========================================
+   ESTADO COMPLETADO
+========================================= */
+
+.status-completed {
+    display:
+        inline-block;
+
+    padding:
+        4px 8px;
+
+    color:
+        white;
+
+    background:
+        #766755;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================
+   TEMPORADAS - RESPONSIVE
+========================================= */
+
+@media (
+    max-width: 1100px
+) {
+
+    .seasons-dashboard {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .season-create-panel,
+    .season-info-panel,
+    .seasons-list-panel {
+        grid-column:
+            1;
+
+        grid-row:
+            auto;
+    }
+}
+
+
+@media (
+    max-width: 650px
+) {
+
+    .season-create-panel form {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .season-info-panel {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .season-info-icon {
+        margin:
+            0 auto;
+    }
+
+
+    .season-flow {
+        flex-wrap:
+            wrap;
+
+        justify-content:
+            center;
+    }
+}
+
+
+/* =========================================
+   PÁGINA DE EVENTO
+========================================= */
+
+.event-page {
+    width:
+        min(1500px, calc(100% - 32px));
+
+    min-height:
+        100vh;
+
+    margin:
+        0 auto;
+
+    padding:
+        20px 0 28px;
+}
+
+
+/* =========================================
+   ENCABEZADO DEL EVENTO
+========================================= */
+
+.event-header {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin-bottom:
+        16px;
+
+    padding:
+        14px 18px;
+
+    color:
+        var(--cream);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(52, 24, 13, 0.96),
+            rgba(87, 40, 19, 0.94)
+        );
+
+    border:
+        2px solid
+        rgba(235, 181, 69, 0.45);
+
+    border-radius:
+        10px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(0, 0, 0, 0.28);
+}
+
+
+.event-brand {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+}
+
+
+.event-brand-icon {
+    width:
+        56px;
+
+    height:
+        56px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        2px dashed
+        var(--gold);
+
+    border-radius:
+        50%;
+
+    font-size:
+        1.9rem;
+}
+
+
+.event-kicker {
+    color:
+        var(--gold);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.14em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-brand h1 {
+    margin:
+        1px 0 0;
+
+    color:
+        var(--cream);
+
+    font-size:
+        clamp(1.55rem, 3vw, 2.4rem);
+
+    line-height:
+        1;
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-brand p {
+    margin:
+        4px 0 0;
+
+    color:
+        rgba(255, 244, 205, 0.7);
+
+    font-size:
+        0.68rem;
+}
+
+
+.event-header-badge {
+    padding:
+        8px 13px;
+
+    color:
+        var(--gold);
+
+    border:
+        2px dashed
+        var(--gold);
+
+    border-radius:
+        5px;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.12em;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+/* =========================================
+   CONTROLES DEL EVENTO
+========================================= */
+
+.event-controls {
+    display:
+        grid;
+
+    grid-template-columns:
+        1.15fr
+        repeat(4, minmax(130px, 1fr))
+        auto;
+
+    gap:
+        10px;
+
+    align-items:
+        end;
+
+    margin-bottom:
+        16px;
+
+    padding:
+        13px 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7e3ab,
+            #e8ca85
+        );
+
+    border:
+        2px solid
+        #8d5528;
+
+    border-radius:
+        9px;
+
+    box-shadow:
+        0 5px 0
+        rgba(68, 33, 17, 0.6);
+}
+
+
+.event-control-heading {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    min-width:
+        0;
+}
+
+
+.event-control-heading > span {
+    font-size:
+        1.35rem;
+}
+
+
+.event-control-heading strong {
+    display:
+        block;
+
+    color:
+        var(--brown);
+
+    font-size:
+        0.78rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-control-heading small {
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.6rem;
+}
+
+
+.event-controls label {
+    margin:
+        0;
+
+    min-width:
+        0;
+}
+
+
+.event-controls select,
+.event-controls input {
+    min-height:
+        38px;
+}
+
+
+.event-control-actions {
+    display:
+        flex;
+
+    gap:
+        7px;
+}
+
+
+.event-control-actions button {
+    min-height:
+        38px;
+
+    white-space:
+        nowrap;
+}
+
+
+.event-secondary-button {
+    background:
+        linear-gradient(
+            180deg,
+            #75624a,
+            #54402f
+        );
+
+    border-color:
+        #38291e;
+
+    box-shadow:
+        0 3px 0
+        #38291e;
+}
+
+
+.event-mode-button {
+    background:
+        linear-gradient(
+            180deg,
+            #d94f32,
+            #a62d20
+        );
+
+    border-color:
+        #771e16;
+
+    box-shadow:
+        0 3px 0
+        #771e16;
+}
+
+
+/* =========================================
+   TABLERO DEL EVENTO
+========================================= */
+
+.event-board {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        18px;
+
+    color:
+        var(--brown);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f9e9b9,
+            #e9cc87 60%,
+            #ddbc70
+        );
+
+    border:
+        4px solid
+        #6e3e20;
+
+    border-radius:
+        13px;
+
+    box-shadow:
+        0 10px 0
+        rgba(48, 23, 12, 0.7),
+        0 18px 40px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.event-board::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        9px;
+
+    pointer-events:
+        none;
+
+    border:
+        2px dashed
+        rgba(102, 56, 29, 0.35);
+
+    border-radius:
+        8px;
+}
+
+
+/* =========================================
+   PARTE SUPERIOR DEL TABLERO
+========================================= */
+
+.event-board-top {
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        6px;
+}
+
+
+.event-board-label {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.11em;
+}
+
+
+.event-live-indicator {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    padding:
+        5px 8px;
+
+    color:
+        #fff;
+
+    background:
+        var(--red-dark);
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.58rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+.event-live-indicator span {
+    width:
+        7px;
+
+    height:
+        7px;
+
+    background:
+        #fff;
+
+    border-radius:
+        50%;
+
+    animation:
+        eventPulse 1.5s infinite;
+}
+
+
+@keyframes eventPulse {
+
+    0%,
+    100% {
+        opacity:
+            1;
+    }
+
+    50% {
+        opacity:
+            0.35;
+    }
+}
+
+
+/* =========================================
+   INFORMACIÓN DEL EVENTO
+========================================= */
+
+.event-info {
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    padding:
+        14px 12px 11px;
+
+    text-align:
+        center;
+}
+
+
+.event-info-eyebrow {
+    color:
+        var(--green-dark);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.2em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-info h2 {
+    margin:
+        5px 0 2px;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        clamp(2rem, 5vw, 4.7rem);
+
+    line-height:
+        0.95;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        2px 2px 0
+        rgba(255, 244, 198, 0.85);
+}
+
+
+.event-info p {
+    margin:
+        4px 0 0;
+
+    color:
+        var(--brown);
+
+    font-size:
+        clamp(0.85rem, 1.7vw, 1.25rem);
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+.event-title-decoration {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    margin-top:
+        9px;
+
+    color:
+        var(--red);
+}
+
+
+.event-title-decoration span {
+    width:
+        min(150px, 18vw);
+
+    height:
+        2px;
+
+    background:
+        var(--red);
+}
+
+
+/* =========================================
+   ESTADO DEL MODO EVENTO
+========================================= */
+
+.event-mode-status {
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        18px;
+
+    width:
+        fit-content;
+
+    margin:
+        0 auto 12px;
+
+    padding:
+        7px 12px;
+
+    color:
+        var(--cream);
+
+    background:
+        #4e2a18;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.68rem;
+}
+
+
+.event-mode-status-title {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    font-weight:
+        900;
+}
+
+
+.event-mode-dot {
+    width:
+        7px;
+
+    height:
+        7px;
+
+    background:
+        var(--gold);
+
+    border-radius:
+        50%;
+
+    animation:
+        eventPulse 1.5s infinite;
+}
+
+
+.event-mode-status p {
+    margin:
+        0;
+
+    color:
+        var(--gold);
+
+    font-weight:
+        800;
+}
+
+
+/* =========================================
+   LEADERBOARD DEL EVENTO
+========================================= */
+
+.event-leaderboard {
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    margin-top:
+        6px;
+
+    padding:
+        13px;
+
+    background:
+        rgba(255, 247, 217, 0.58);
+
+    border:
+        2px solid
+        rgba(105, 57, 29, 0.35);
+
+    border-radius:
+        8px;
+}
+
+
+.event-menu-title {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--brown);
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.12em;
+}
+
+
+.event-menu-stamp {
+    padding:
+        5px 8px;
+
+    color:
+        var(--red-dark);
+
+    border:
+        2px solid
+        var(--red-dark);
+
+    border-radius:
+        50%;
+
+    font-size:
+        0.48rem;
+
+    line-height:
+        1.05;
+
+    text-align:
+        center;
+
+    transform:
+        rotate(5deg);
+}
+
+
+.event-table-container {
+    overflow:
+        auto;
+}
+
+
+.event-leaderboard table {
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+}
+
+
+.event-leaderboard th {
+    padding:
+        8px 12px;
+
+    color:
+        #fff4cf;
+
+    background:
+        #5a321d;
+
+    font-size:
+        0.68rem;
+
+    letter-spacing:
+        0.09em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.event-leaderboard th:first-child {
+    width:
+        80px;
+
+    text-align:
+        center;
+}
+
+
+.event-leaderboard th:last-child {
+    width:
+        180px;
+
+    text-align:
+        right;
+}
+
+
+.event-leaderboard td {
+    padding:
+        10px 12px;
+
+    border-bottom:
+        1px dashed
+        rgba(98, 54, 29, 0.35);
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        800;
+}
+
+
+.event-leaderboard td:first-child {
+    text-align:
+        center;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        1000;
+}
+
+
+.event-leaderboard td:last-child {
+    text-align:
+        right;
+
+    color:
+        var(--red-dark);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        1000;
+}
+
+
+.event-leaderboard tbody tr:nth-child(1) td {
+    background:
+        rgba(239, 186, 65, 0.24);
+
+    font-size:
+        1.03rem;
+}
+
+
+.event-leaderboard tbody tr:nth-child(1) td:first-child::before {
+    content:
+        "🥇 ";
+}
+
+
+.event-leaderboard tbody tr:nth-child(2) td:first-child::before {
+    content:
+        "🥈 ";
+}
+
+
+.event-leaderboard tbody tr:nth-child(3) td:first-child::before {
+    content:
+        "🥉 ";
+}
+
+
+.event-leaderboard tbody tr:hover td {
+    background:
+        rgba(174, 75, 44, 0.08);
+}
+
+
+/* =========================================
+   SALIDA DEL MODO EVENTO
+========================================= */
+
+.event-mode-exit {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    margin-top:
+        12px;
+}
+
+
+.event-mode-exit button {
+    min-width:
+        210px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #6a5d4e,
+            #473c31
+        );
+
+    border-color:
+        #302820;
+
+    box-shadow:
+        0 3px 0
+        #302820;
+}
+
+
+/* =========================================
+   EVENT PIE DE PÁGINA
+========================================= */
+
+.event-footer {
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    margin-top:
+        13px;
+
+    padding:
+        9px 4px 1px;
+
+    color:
+        var(--brown);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.1em;
+}
+
+
+.event-footer > div {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+}
+
+
+.event-footer > div:last-child {
+    justify-content:
+        flex-end;
+}
+
+
+.event-footer p {
+    margin:
+        0;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        0.61rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        normal;
+}
+
+
+.event-footer-icon {
+    font-size:
+        1rem;
+}
+
+
+/* =========================================
+   PANTALLA COMPLETA
+========================================= */
+
+:fullscreen {
+    background:
+        #23120c;
+}
+
+
+:fullscreen .event-page {
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    padding:
+        18px 28px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+
+:fullscreen .event-header {
+    margin-bottom:
+        12px;
+}
+
+
+:fullscreen .event-controls {
+    margin-bottom:
+        12px;
+}
+
+
+:fullscreen .event-board {
+    flex:
+        1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+
+:fullscreen .event-leaderboard {
+    flex:
+        1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+
+:fullscreen .event-table-container {
+    flex:
+        1;
+}
+
+
+/* =========================================
+   MODO EVENTO
+========================================= */
+
+:fullscreen #eventControls[hidden] {
+    display:
+        none !important;
+}
+
+
+:fullscreen #eventModeStatus:not([hidden]) {
+    display:
+        flex !important;
+}
+
+
+:fullscreen #eventModeExitContainer:not([hidden]) {
+    display:
+        flex !important;
+}
+
+
+/*
+   When controls are hidden, the layout becomes
+   much more presentation-focused.
+*/
+
+:fullscreen .event-info h2 {
+    font-size:
+        clamp(3rem, 7vw, 6.5rem);
+}
+
+
+:fullscreen .event-info p {
+    font-size:
+        clamp(1rem, 2vw, 1.6rem);
+}
+
+
+:fullscreen .event-leaderboard td {
+    padding:
+        12px 16px;
+
+    font-size:
+        clamp(0.95rem, 1.45vw, 1.5rem);
+}
+
+
+:fullscreen .event-leaderboard td:first-child,
+:fullscreen .event-leaderboard td:last-child {
+    font-size:
+        clamp(1.05rem, 1.6vw, 1.7rem);
+}
+
+
+:fullscreen .event-leaderboard th {
+    padding:
+        9px 16px;
+
+    font-size:
+        clamp(0.66rem, 1vw, 0.95rem);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (
+    max-width: 1150px
+) {
+
+    .event-controls {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .event-control-heading,
+    .event-control-actions {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .event-control-actions {
+        justify-content:
+            flex-end;
+    }
+}
+
+
+@media (
+    max-width: 700px
+) {
+
+    .event-page {
+        width:
+            min(100% - 18px, 1500px);
+
+        padding-top:
+            10px;
+    }
+
+
+    .event-header {
+        align-items:
+            flex-start;
+    }
+
+
+    .event-header-badge {
+        display:
+            none;
+    }
+
+
+    .event-controls {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .event-control-heading,
+    .event-control-actions {
+        grid-column:
+            auto;
+    }
+
+
+    .event-control-actions {
+        flex-direction:
+            column;
+    }
+
+
+    .event-control-actions button {
+        width:
+            100%;
+    }
+
+
+    .event-board {
+        padding:
+            13px;
+    }
+
+
+    .event-footer {
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+    }
+
+
+    .event-footer > div,
+    .event-footer > div:last-child {
+        justify-content:
+            center;
+    }
+
+
+    .event-leaderboard td {
+        padding:
+            9px 8px;
+    }
+}
+
+
+/* =========================================
+   MODO EVENTO - SINGLE SCREEN OVERRIDE
+========================================= */
+
+/*
+   Fullscreen Event Mode should behave like
+   a presentation/puntajeboard, not a webpage.
+*/
+
+:fullscreen body {
+    overflow:
+        hidden;
+}
+
+
+:fullscreen .event-page {
+    width:
+        100%;
+
+    height:
+        100vh;
+
+    min-height:
+        0;
+
+    padding:
+        12px 20px;
+
+    overflow:
+        hidden;
+}
+
+
+/* =========================================
+   ENCABEZADO COMPACTO
+========================================= */
+
+:fullscreen .event-header {
+    flex:
+        0 0 auto;
+
+    min-height:
+        64px;
+
+    margin-bottom:
+        9px;
+
+    padding:
+        8px 15px;
+}
+
+
+:fullscreen .event-brand-icon {
+    width:
+        43px;
+
+    height:
+        43px;
+
+    font-size:
+        1.45rem;
+}
+
+
+:fullscreen .event-brand h1 {
+    font-size:
+        1.85rem;
+}
+
+
+:fullscreen .event-brand p {
+    display:
+        none;
+}
+
+
+:fullscreen .event-kicker {
+    font-size:
+        0.52rem;
+}
+
+
+/* =========================================
+   BOARD FILLS RECONTENIDO PRINCIPALING SCREEN
+========================================= */
+
+:fullscreen .event-board {
+    flex:
+        1 1 auto;
+
+    min-height:
+        0;
+
+    padding:
+        11px 15px;
+
+    overflow:
+        hidden;
+}
+
+
+/* =========================================
+   ENCABEZADO DEL TABLERO MÁS COMPACTO
+========================================= */
+
+:fullscreen .event-board-top {
+    flex:
+        0 0 auto;
+
+    margin-bottom:
+        0;
+}
+
+
+:fullscreen .event-board-label {
+    font-size:
+        0.55rem;
+}
+
+
+:fullscreen .event-live-indicator {
+    padding:
+        4px 7px;
+
+    font-size:
+        0.5rem;
+}
+
+
+/* =========================================
+   TÍTULO DEL JUEGO
+========================================= */
+
+:fullscreen .event-info {
+    flex:
+        0 0 auto;
+
+    padding:
+        5px 10px 3px;
+}
+
+
+:fullscreen .event-info-eyebrow {
+    font-size:
+        0.5rem;
+}
+
+
+:fullscreen .event-info h2 {
+    margin:
+        2px 0 0;
+
+    font-size:
+        clamp(2.3rem, 4.3vw, 4.3rem);
+
+    line-height:
+        0.9;
+}
+
+
+:fullscreen .event-info p {
+    margin-top:
+        3px;
+
+    font-size:
+        clamp(0.85rem, 1.35vw, 1.2rem);
+}
+
+
+:fullscreen .event-title-decoration {
+    margin-top:
+        4px;
+
+    gap:
+        7px;
+}
+
+
+:fullscreen .event-title-decoration span {
+    width:
+        100px;
+}
+
+
+/* =========================================
+   MODO EVENTO INDICATOR
+========================================= */
+
+:fullscreen .event-mode-status {
+    flex:
+        0 0 auto;
+
+    margin:
+        3px auto 6px;
+
+    padding:
+        4px 10px;
+
+    font-size:
+        0.55rem;
+}
+
+
+/* =========================================
+   LEADERBOARD USES RECONTENIDO PRINCIPALING SPACE
+========================================= */
+
+:fullscreen .event-leaderboard {
+    flex:
+        1 1 auto;
+
+    min-height:
+        0;
+
+    margin-top:
+        2px;
+
+    padding:
+        7px 10px;
+
+    overflow:
+        hidden;
+}
+
+
+:fullscreen .event-menu-title {
+    height:
+        25px;
+
+    margin-bottom:
+        4px;
+
+    font-size:
+        0.62rem;
+}
+
+
+:fullscreen .event-menu-stamp {
+    padding:
+        3px 6px;
+
+    font-size:
+        0.38rem;
+}
+
+
+/* =========================================
+   TABLA
+========================================= */
+
+:fullscreen .event-table-container {
+    flex:
+        1 1 auto;
+
+    min-height:
+        0;
+
+    overflow:
+        hidden;
+}
+
+
+:fullscreen .event-leaderboard table {
+    table-layout:
+        fixed;
+}
+
+
+:fullscreen .event-leaderboard thead {
+    height:
+        31px;
+}
+
+
+:fullscreen .event-leaderboard th {
+    height:
+        31px;
+
+    padding:
+        4px 12px;
+
+    font-size:
+        0.62rem;
+}
+
+
+/*
+   Top 10 shares the available vertical
+   space rather than extending the page.
+*/
+
+:fullscreen .event-leaderboard td {
+    height:
+        auto;
+
+    padding:
+        3px 14px;
+
+    font-size:
+        clamp(0.78rem, 1.05vw, 1.05rem);
+
+    line-height:
+        1;
+}
+
+
+:fullscreen .event-leaderboard td:first-child,
+:fullscreen .event-leaderboard td:last-child {
+    font-size:
+        clamp(0.85rem, 1.15vw, 1.15rem);
+}
+
+
+/* First place remains special without
+   becoming substantially taller.
+*/
+
+:fullscreen .event-leaderboard tbody tr:nth-child(1) td {
+    font-size:
+        clamp(0.9rem, 1.2vw, 1.2rem);
+}
+
+
+/* =========================================
+   BOTÓN DE SALIDA
+========================================= */
+
+:fullscreen .event-mode-exit {
+    flex:
+        0 0 auto;
+
+    margin-top:
+        5px;
+}
+
+
+:fullscreen .event-mode-exit button {
+    min-height:
+        27px;
+
+    padding:
+        4px 12px;
+
+    font-size:
+        0.55rem;
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+:fullscreen .event-footer {
+    flex:
+        0 0 auto;
+
+    margin-top:
+        5px;
+
+    padding:
+        3px 2px 0;
+
+    font-size:
+        0.5rem;
+}
+
+
+:fullscreen .event-footer p {
+    font-size:
+        0.5rem;
+}
+
+
+:fullscreen .event-footer-icon {
+    font-size:
+        0.75rem;
+}
+
+/* =========================================
+   MODO EVENTO - FINAL PANTALLA COMPLETA FIX
+========================================= */
+
+.event-page .event-info,
+.event-page .event-mode-status,
+.event-page .event-leaderboard,
+.event-page .event-mode-exit,
+.event-page .event-footer {
+    box-shadow: none;
+}
+
+:fullscreen body {
+    overflow: hidden;
+}
+
+:fullscreen .event-page {
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    margin: 0;
+    padding: 12px 20px;
+    overflow: hidden;
+}
+
+:fullscreen .event-header {
+    flex: 0 0 auto;
+    min-height: 64px;
+    margin-bottom: 9px;
+    padding: 8px 15px;
+}
+
+:fullscreen .event-brand-icon { width: 43px; height: 43px; font-size: 1.45rem; }
+:fullscreen .event-brand h1 { font-size: 1.85rem; }
+:fullscreen .event-brand p { display: none; }
+:fullscreen .event-kicker { font-size: 0.52rem; }
+
+:fullscreen .event-board {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    padding: 11px 15px;
+    overflow: hidden;
+}
+
+:fullscreen .event-board-top { flex: 0 0 auto; margin-bottom: 0; }
+:fullscreen .event-board-label { font-size: 0.55rem; }
+:fullscreen .event-live-indicator { padding: 4px 7px; font-size: 0.5rem; }
+
+:fullscreen .event-info {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 5px 10px 2px;
+    background: transparent;
+    border: 0;
+}
+
+:fullscreen .event-info::before { display: none; }
+:fullscreen .event-info-eyebrow { font-size: 0.5rem; }
+:fullscreen .event-info h2 { margin: 2px 0 0; font-size: clamp(2.8rem, 4.6vw, 4.7rem); line-height: 0.9; }
+:fullscreen .event-info p { margin-top: 3px; font-size: clamp(0.85rem, 1.35vw, 1.2rem); }
+:fullscreen .event-title-decoration { margin-top: 4px; gap: 7px; }
+:fullscreen .event-title-decoration span { width: 100px; }
+
+:fullscreen .event-mode-status {
+    width: fit-content;
+    min-height: 0;
+    flex: 0 0 auto;
+    margin: 4px auto 7px;
+    padding: 4px 11px;
+    background: #4e2a18;
+    border: 1px solid #9b622e;
+    border-radius: 999px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+:fullscreen .event-mode-status::before { display: none; }
+
+:fullscreen .event-leaderboard {
+    width: min(1080px, 88%);
+    flex: 0 1 auto;
+    min-height: 0;
+    margin: 3px auto 0;
+    padding: 8px 11px 10px;
+    overflow: hidden;
+    background: rgba(255,247,217,0.62);
+    border: 1px solid rgba(105,57,29,0.35);
+    border-radius: 8px;
+    box-shadow: 0 7px 14px rgba(64,36,19,0.22);
+}
+
+:fullscreen .event-leaderboard::before { display: none; }
+:fullscreen .event-menu-title { height: 25px; margin-bottom: 4px; font-size: 0.62rem; }
+:fullscreen .event-menu-stamp { padding: 3px 6px; font-size: 0.38rem; }
+
+:fullscreen .event-table-container { width: 100%; min-height: 0; overflow: hidden; }
+
+:fullscreen .event-leaderboard table {
+    width: 100%;
+    height: auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+:fullscreen .event-leaderboard thead,
+:fullscreen .event-leaderboard tbody tr { height: auto; }
+
+:fullscreen .event-leaderboard th {
+    height: auto;
+    padding: 6px 12px;
+    line-height: 1.1;
+    font-size: 0.68rem;
+    vertical-align: middle;
+}
+
+:fullscreen .event-leaderboard td {
+    height: auto;
+    padding: 5px 14px;
+    line-height: 1.15;
+    font-size: clamp(0.82rem, 1.05vw, 1.05rem);
+    vertical-align: middle;
+}
+
+:fullscreen .event-leaderboard th:first-child,
+:fullscreen .event-leaderboard td:first-child { width: 80px; text-align: center; }
+
+:fullscreen .event-leaderboard th:last-child,
+:fullscreen .event-leaderboard td:last-child { width: 190px; text-align: right; }
+
+:fullscreen .event-leaderboard tbody tr:nth-child(1) td {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 1.02rem;
+    background: rgba(232,177,59,0.20);
+}
+
+:fullscreen .event-leaderboard tbody tr:nth-child(2) td,
+:fullscreen .event-leaderboard tbody tr:nth-child(3) td { font-size: 0.98rem; }
+
+:fullscreen .event-mode-exit {
+    width: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+    margin: 7px auto 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+:fullscreen .event-mode-exit::before { display: none; }
+:fullscreen .event-mode-exit button { width: auto; min-width: 190px; min-height: 28px; margin: 0; padding: 5px 15px; font-size: 0.55rem; }
+
+:fullscreen .event-footer {
+    width: 100%;
+    min-height: 0;
+    flex: 0 0 auto;
+    margin: auto 0 0;
+    padding: 6px 3px 1px;
+    background: transparent;
+    border: 0;
+}
+
+:fullscreen .event-footer::before { display: none; }
+:fullscreen .event-footer p { font-size: 0.5rem; }
+:fullscreen .event-footer-icon { font-size: 0.75rem; }
+
+/* =========================================
+   DECORACIÓN DE PÁGINAS ADMIN
+   Mascotas y carteles anclados al contenido.
+========================================= */
+
+/* Base compartida de las mascotas. */
+.page-mascot {
+    position: relative;
+    z-index: 20;
+
+    width: clamp(145px, 11vw, 210px);
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+    user-select: none;
+
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.page-mascot img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 8px
+            rgba(0, 0, 0, 0.4)
+        );
+}
+
+
+/* =========================================
+   LEADERBOARD - DISTRIBUCIÓN PRINCIPAL
+========================================= */
+
+.leaderboard-dashboard {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(360px, 0.65fr);
+
+    gap: 16px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   LEADERBOARD - COLUMNA DERECHA
+========================================= */
+
+.leaderboard-side-column {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* Los paneles ocupan todo el ancho
+   de la columna derecha. */
+
+.leaderboard-side-column
+.player-details-panel,
+
+.leaderboard-side-column
+.player-details-placeholder {
+    width: 100%;
+}
+
+
+/* =========================================
+   LEADERBOARD - MASCOTA
+========================================= */
+
+.leaderboard-decoration-area {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+
+    margin-top: 18px;
+    margin-bottom: 10px;
+
+    padding: 0;
+
+    min-height: 0;
+}
+
+
+.leaderboard-decoration-area
+.mascot-leaderboard {
+    position: relative;
+
+    width: clamp(
+        260px,
+        21vw,
+        370px
+    );
+
+    margin: 0;
+
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    transform:
+        scaleX(-1)
+        rotate(-3deg);
+}
+
+
+/* =========================================
+   LEADERBOARD - RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .leaderboard-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    .leaderboard-side-column {
+        width: 100%;
+    }
+
+
+    .leaderboard-decoration-area {
+        justify-content: center;
+
+        margin-top: 16px;
+    }
+
+
+    .leaderboard-decoration-area
+    .mascot-leaderboard {
+        width: clamp(
+            220px,
+            30vw,
+            300px
+        );
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .leaderboard-decoration-area {
+        display: none;
+    }
+
+}
+
+
+/* =========================================
+   JUEGOS - MASCOTA JUNTO AL TÍTULO
+========================================= */
+
+.games-page-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: clamp(18px, 2vw, 30px);
+}
+
+.games-title-copy {
+    flex: 0 1 auto;
+}
+
+.games-page-title .mascot-games {
+    flex: 0 0 auto;
+
+    width: clamp(95px, 8vw, 135px);
+
+    margin-left: 4px;
+
+    transform:
+        rotate(4deg);
+}
+
+/* =========================================
+   TEMPORADAS - ÁREA DECORATIVA
+========================================= */
+
+.seasons-decoration-area {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    gap: clamp(30px, 4vw, 65px);
+
+    width: 100%;
+
+    margin-top: -220px;
+    margin-bottom: 20px;
+
+    padding-right: clamp(80px, 10vw, 170px);
+
+    min-height: 0;
+}
+
+
+/* =========================================
+   TEMPORADAS - MASCOTA
+========================================= */
+
+.seasons-decoration-area
+.mascot-seasons {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: clamp(
+        280px,
+        23vw,
+        400px
+    );
+
+    margin: 0;
+
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    transform:
+        rotate(2deg);
+}
+
+
+/* =========================================
+   TEMPORADAS - CARTEL PIZZA CUP
+========================================= */
+
+.seasons-decoration-area
+.season-chalkboard {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: clamp(
+        210px,
+        18vw,
+        270px
+    );
+
+    margin: 0;
+
+    padding:
+        24px
+        24px
+        22px;
+
+    color:
+        #f8e5b5;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171a15,
+            #0b0e0b
+        );
+
+    border:
+        9px solid
+        #63351d;
+
+    border-radius:
+        6px;
+
+    outline:
+        2px solid
+        #2d170d;
+
+    box-shadow:
+        0 10px 20px
+        rgba(0, 0, 0, 0.45),
+
+        inset 0 0 16px
+        rgba(255, 255, 255, 0.04);
+
+    text-align:
+        center;
+
+    transform:
+        rotate(-2deg);
+
+    z-index:
+        10;
+}
+
+
+/* =========================================
+   TEMPORADAS - CHINCHETA
+========================================= */
+
+.season-chalkboard-pin {
+    position: absolute;
+
+    top: -13px;
+    left: 50%;
+
+    width: 14px;
+    height: 14px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        var(--red);
+
+    border:
+        2px solid
+        var(--red-dark);
+
+    border-radius:
+        50%;
+}
+
+
+/* =========================================
+   TEMPORADAS - TEXTO DEL CARTEL
+========================================= */
+
+.season-chalkboard-kicker {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        0.6rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.season-chalkboard h3 {
+    margin: 0;
+
+    color:
+        #fff1c2;
+
+    font-size:
+        1.7rem;
+
+    letter-spacing:
+        0.06em;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        2px 2px 0
+        rgba(0, 0, 0, 0.7);
+}
+
+
+.season-chalkboard-divider {
+    width: 75%;
+    height: 2px;
+
+    margin:
+        12px auto
+        14px;
+
+    background:
+        rgba(
+            241,
+            210,
+            129,
+            0.4
+        );
+}
+
+
+.season-chalkboard p {
+    margin:
+        7px 0;
+
+    color:
+        #f6dd9b;
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.season-chalkboard-stars {
+    margin-top:
+        15px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        0.85rem;
+
+    letter-spacing:
+        0.35em;
+}
+
+
+/* =========================================
+   TEMPORADAS - RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .seasons-decoration-area {
+        gap: 25px;
+
+        margin-top: -60px;
+
+        padding-right: 30px;
+    }
+
+
+    .seasons-decoration-area
+    .mascot-seasons {
+        width: clamp(
+            230px,
+            30vw,
+            320px
+        );
+    }
+
+
+    .seasons-decoration-area
+    .season-chalkboard {
+        width: clamp(
+            185px,
+            23vw,
+            230px
+        );
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .seasons-decoration-area {
+        display: none;
+    }
+
+}
+/* =========================================
+   DECORACIÓN ADMIN - RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .leaderboard-decoration-area {
+        grid-template-columns: 1fr;
+
+        min-height: 250px;
+    }
+
+    .leaderboard-decoration-area .mascot-leaderboard {
+        grid-column: 1;
+
+        justify-self: end;
+
+        width: clamp(210px, 28vw, 300px);
+    }
+
+
+    .games-page-title {
+        flex-wrap: wrap;
+    }
+
+    .games-page-title .mascot-games {
+        width: clamp(90px, 11vw, 120px);
+    }
+
+
+    .seasons-decoration-area {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(190px, 0.65fr);
+
+        min-height: 310px;
+
+        padding-right: 0;
+    }
+
+    .seasons-decoration-area .mascot-seasons {
+        grid-column: 1;
+
+        justify-self: end;
+
+        width: clamp(230px, 30vw, 320px);
+    }
+
+    .seasons-decoration-area .season-chalkboard {
+        grid-column: 2;
+
+        justify-self: start;
+
+        width: clamp(185px, 23vw, 230px);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .leaderboard-decoration-area {
+        display: none;
+    }
+
+
+    .games-page-title .mascot-games {
+        display: none;
+    }
+
+
+    .seasons-decoration-area {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   EVENTO - MASCOTA
+   El evento mantiene su posicionamiento propio.
+========================================= */
+
+.mascot-event {
+    right: -25px;
+    bottom: 80px;
+
+    width: clamp(175px, 13vw, 250px);
+
+    transform:
+        rotate(2deg);
+}
+
+:fullscreen .mascot-event {
+    position: absolute;
+
+    right: 25px;
+    bottom: 80px;
+
+    width: clamp(170px, 12vw, 240px);
+
+    z-index: 100;
+}
+
+/* ============================================================
+   PÁGINA DE EVENTO - PUBLIC TAVERN REDESIGN
+   Limitado a .event-page para no afectar el layout del panel admin.
+============================================================ */
+
+.event-body {
+    overflow-x: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(101, 47, 21, 0.32),
+            transparent 34%
+        ),
+        linear-gradient(
+            rgba(13, 6, 4, 0.93),
+            rgba(10, 4, 3, 0.98)
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #1d0d07 0,
+            #1d0d07 110px,
+            #271209 110px,
+            #271209 220px
+        );
+}
+
+.event-page {
+    position: relative;
+    width: min(1500px, calc(100% - 30px));
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 18px 0 30px;
+}
+
+
+/* ---------------- LETRERO DEL EVENTO ---------------- */
+
+.event-page .event-header {
+    position: relative;
+    width: min(880px, calc(100% - 30px));
+    min-height: 112px;
+    margin: 0 auto 16px;
+    padding: 17px 120px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff0cc;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #5b3018,
+            #35180d 58%,
+            #1b0b06
+        );
+
+    border: 4px solid #7c451f;
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 0 #180805,
+        0 16px 32px rgba(0, 0, 0, 0.48),
+        inset 0 0 0 2px rgba(238, 180, 72, 0.18);
+}
+
+.event-page .event-header::before,
+.event-page .event-header::after {
+    content: "◆";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d84a2d;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 0 #55170f;
+}
+
+.event-page .event-header::before {
+    left: 34px;
+}
+
+.event-page .event-header::after {
+    right: 34px;
+}
+
+.event-page .event-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.event-page .event-brand-icon {
+    width: 66px;
+    height: 66px;
+    flex: 0 0 66px;
+
+    display: grid;
+    place-items: center;
+
+    background: #32160d;
+    border: 2px dashed #dca83f;
+    border-radius: 50%;
+
+    font-size: 2rem;
+}
+
+.event-page .event-brand-copy {
+    text-align: left;
+}
+
+.event-page .event-kicker {
+    color: #e5b84d;
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.event-page .event-brand h1 {
+    margin: 2px 0 0;
+    color: #fff1cf;
+    font-size: clamp(2.1rem, 4.3vw, 4.25rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-shadow:
+        3px 3px 0 #8d2419,
+        5px 5px 0 rgba(0, 0, 0, 0.45);
+}
+
+.event-page .event-brand p {
+    margin: 6px 0 0;
+    color: #d7af67;
+    font-size: 0.65rem;
+}
+
+.event-page .event-header-badge {
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%) rotate(-1deg);
+
+    padding: 6px 18px;
+
+    color: #ffd05c;
+    background: #6a3518;
+    border: 3px solid #3a180b;
+    border-radius: 5px;
+
+    box-shadow: 0 3px 0 #140704;
+
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+}
+
+
+/* ---------------- CONTROLES ---------------- */
+
+.event-page .event-controls {
+    width: min(1280px, 100%);
+    margin: 25px auto 17px;
+    padding: 12px 13px;
+
+    display: grid;
+    grid-template-columns:
+        1.1fr
+        repeat(4, minmax(120px, 1fr))
+        auto;
+    align-items: end;
+    gap: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8e6b5,
+            #e9c77e
+        );
+
+    border: 2px solid #9f6230;
+    border-radius: 9px;
+
+    box-shadow:
+        0 5px 0 rgba(66, 31, 15, 0.65),
+        0 9px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-page .event-control-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.event-page .event-control-icon {
+    font-size: 1.3rem;
+}
+
+.event-page .event-control-heading strong {
+    display: block;
+    color: #3b1d11;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+.event-page .event-control-heading small {
+    display: block;
+    margin-top: 2px;
+    color: #765133;
+    font-size: 0.56rem;
+}
+
+.event-page .event-controls label {
+    margin: 0;
+    min-width: 0;
+}
+
+.event-page .event-controls select,
+.event-page .event-controls input {
+    min-height: 36px;
+    font-size: 0.74rem;
+}
+
+.event-page .event-control-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.event-page .event-control-actions button {
+    min-height: 36px;
+    white-space: nowrap;
+    font-size: 0.58rem;
+}
+
+.event-page .event-secondary-button {
+    background: linear-gradient(180deg, #755b42, #4c3727);
+    border-color: #332116;
+    box-shadow: 0 3px 0 #332116;
+}
+
+
+/* ---------------- ESCENARIO DE TABERNA ---------------- */
+
+.event-page .event-stage {
+    position: relative;
+    width: min(1280px, 100%);
+    min-height: 760px;
+    margin: 0 auto;
+    padding: 24px 145px 34px;
+
+    background:
+        radial-gradient(
+            circle at 50% 12%,
+            rgba(124, 61, 28, 0.34),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(35, 15, 8, 0.95),
+            rgba(14, 6, 4, 0.98)
+        );
+
+    border: 1px solid rgba(164, 96, 43, 0.38);
+    border-radius: 14px;
+
+    box-shadow:
+        inset 0 0 65px rgba(0, 0, 0, 0.55),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.event-page .event-ambient {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+}
+
+.event-page .event-ambient-left {
+    left: 22px;
+    top: 105px;
+    transform: rotate(-7deg);
+}
+
+.event-page .event-ambient-left span {
+    display: block;
+    color: #d8a642;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.05;
+    text-shadow: 0 0 8px rgba(220, 168, 63, 0.28);
+}
+
+.event-page .event-ambient-right {
+    right: 18px;
+    top: 90px;
+    text-align: center;
+    transform: rotate(5deg);
+}
+
+.event-page .event-ambient-right small,
+.event-page .event-ambient-right strong,
+.event-page .event-ambient-right b {
+    display: block;
+}
+
+.event-page .event-ambient-right small,
+.event-page .event-ambient-right strong {
+    color: #8fd477;
+    text-shadow: 0 0 8px rgba(105, 216, 94, 0.3);
+}
+
+.event-page .event-ambient-right b {
+    margin-top: 3px;
+    color: #ff5b42;
+    font-size: 0.95rem;
+    text-shadow: 0 0 8px rgba(255, 70, 45, 0.35);
+}
+
+
+/* ---------------- MARCADOR DE PERGAMINO ---------------- */
+
+.event-page .event-board {
+    position: relative;
+    z-index: 3;
+
+    width: min(940px, 100%);
+    margin: 0 auto;
+    padding: 14px 17px 15px;
+    overflow: visible;
+
+    color: #321b10;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f9eabf,
+            #efd797 58%,
+            #e4c57c
+        );
+
+    border: 5px solid #6f3a1c;
+    border-radius: 13px;
+
+    box-shadow:
+        0 9px 0 #291006,
+        0 17px 32px rgba(0, 0, 0, 0.42),
+        inset 0 0 0 2px rgba(255, 249, 222, 0.55);
+}
+
+.event-page .event-board::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    pointer-events: none;
+
+    border: 1px dashed rgba(97, 55, 27, 0.26);
+    border-radius: 8px;
+}
+
+.event-page .event-board-top {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 5px;
+}
+
+.event-page .event-board-label {
+    color: #7a2117;
+    font-size: 0.57rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.event-page .event-live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 4px 7px;
+
+    color: #fff;
+    background: #7d2119;
+    border-radius: 999px;
+
+    font-size: 0.5rem;
+    font-weight: 900;
+}
+
+.event-page .event-live-indicator > span {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+
+/* ---------------- MARQUESINA DEL JUEGO ---------------- */
+
+.event-page .event-info {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 16px 10px;
+    padding: 11px 20px 12px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0c7,
+            #eed392
+        );
+
+    border: 2px solid #a66a33;
+    border-radius: 9px;
+
+    box-shadow:
+        inset 0 0 14px rgba(108, 58, 25, 0.12);
+}
+
+.event-page .event-info-eyebrow {
+    display: block;
+    margin-bottom: 2px;
+
+    color: #8f5b29;
+    font-size: 0.48rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+}
+
+.event-page .event-game-marquee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+.event-page .event-game-marquee h2 {
+    margin: 0;
+
+    color: #aa2c20;
+
+    font-size: clamp(2.6rem, 5.2vw, 4.9rem);
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+
+    text-shadow:
+        2px 2px 0 #fff1cb,
+        4px 4px 0 #48160f;
+}
+
+.event-page .event-note {
+    color: #7c251a;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.event-page .event-season-ribbon {
+    display: inline-block;
+    margin-top: 7px;
+    padding: 5px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #67843e,
+            #3d5724
+        );
+
+    border: 2px solid #2c401a;
+    border-radius: 3px;
+
+    box-shadow:
+        0 3px 0 #263518;
+
+    transform: rotate(-1deg);
+}
+
+.event-page .event-season-ribbon p {
+    margin: 0;
+
+    color: #ffe5a2;
+    font-size: clamp(0.82rem, 1.5vw, 1.15rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------- ESTADO DEL EVENTO ---------------- */
+
+.event-page .event-mode-status {
+    position: relative;
+    z-index: 2;
+
+    width: fit-content;
+    margin: 4px auto 9px;
+    padding: 5px 12px;
+
+    color: #ffd16d;
+    background: #4c2615;
+    border: 1px solid #8b5527;
+    border-radius: 999px;
+
+    text-align: center;
+}
+
+.event-page .event-mode-status-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 0.5rem;
+    font-weight: 900;
+}
+
+.event-page .event-mode-dot {
+    width: 6px;
+    height: 6px;
+
+    background: #ff5138;
+    border-radius: 50%;
+}
+
+.event-page .event-mode-status p {
+    display: inline;
+    margin: 0 0 0 8px;
+
+    color: #f6db99;
+    font-size: 0.52rem;
+}
+
+
+/* ---------------- TABLA DE POSICIONES ---------------- */
+
+.event-page .event-leaderboard {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 16px;
+    padding: 9px 10px 10px;
+
+    background: rgba(255, 246, 215, 0.62);
+    border: 1px solid rgba(109, 61, 29, 0.32);
+    border-radius: 8px;
+}
+
+.event-page .event-menu-title {
+    min-height: 29px;
+    margin-bottom: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #4a2615;
+
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.event-page .event-menu-stamp {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    color: #86251b;
+    border: 2px solid #86251b;
+    border-radius: 50%;
+
+    font-size: 0.38rem;
+    line-height: 0.8;
+    text-align: center;
+
+    transform: rotate(8deg);
+}
+
+.event-page .event-table-container {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.event-page .event-leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.event-page .event-leaderboard thead {
+    background:
+        linear-gradient(
+            180deg,
+            #c63826,
+            #98261b
+        );
+}
+
+.event-page .event-leaderboard th {
+    padding: 8px 11px;
+
+    color: #fff7df;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+}
+
+.event-page .event-leaderboard td {
+    padding: 7px 11px;
+
+    border-bottom:
+        1px dashed
+        rgba(83, 46, 22, 0.22);
+
+    font-size: 0.88rem;
+}
+
+.event-page .event-leaderboard tbody tr {
+    background: transparent;
+}
+
+.event-page .event-leaderboard tbody tr:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.event-page .event-leaderboard th:first-child,
+.event-page .event-leaderboard td:first-child {
+    width: 80px;
+    text-align: center;
+}
+
+.event-page .event-leaderboard th:last-child,
+.event-page .event-leaderboard td:last-child {
+    width: 175px;
+    text-align: right;
+}
+
+.event-page .event-leaderboard tbody td:nth-child(2) {
+    color: #321b10;
+    font-weight: 900;
+}
+
+.event-page .event-leaderboard tbody td:nth-child(3) {
+    color: #9a2118;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.event-page .event-leaderboard tbody tr:nth-child(1) td {
+    background: rgba(232, 177, 59, 0.17);
+}
+
+.event-page .event-leaderboard tbody tr:nth-child(1) td:first-child::before {
+    content: "🥇";
+    margin-right: 6px;
+}
+
+.event-page .event-leaderboard tbody tr:nth-child(2) td:first-child::before {
+    content: "🥈";
+    margin-right: 6px;
+}
+
+.event-page .event-leaderboard tbody tr:nth-child(3) td:first-child::before {
+    content: "🥉";
+    margin-right: 6px;
+}
+
+
+/* ---------------- MASCOTA EXCLUSIVA DEL EVENTO ---------------- */
+
+.event-page .mascot-event {
+    position: absolute;
+
+    right: -125px;
+    bottom: 95px;
+
+    width: clamp(185px, 16vw, 255px);
+
+    transform: rotate(2deg);
+
+    z-index: 8;
+}
+
+.event-page .mascot-event img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ---------------- CARTEL DECORATIVO DE PUNTAJES ---------------- */
+
+.event-page .event-score-sign {
+    position: absolute;
+
+    right: -135px;
+    bottom: 4px;
+
+    width: 118px;
+    padding: 10px 7px;
+
+    color: #e6d2a1;
+    background: #171a16;
+    border: 7px solid #64351d;
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.38);
+
+    text-align: center;
+
+    transform: rotate(4deg);
+
+    z-index: 6;
+}
+
+.event-page .event-score-sign span,
+.event-page .event-score-sign strong,
+.event-page .event-score-sign em,
+.event-page .event-score-sign b {
+    display: block;
+}
+
+.event-page .event-score-sign span,
+.event-page .event-score-sign em {
+    font-size: 0.62rem;
+}
+
+.event-page .event-score-sign strong,
+.event-page .event-score-sign b {
+    color: #e2ad43;
+    font-size: 0.82rem;
+}
+
+
+/* ---------------- EXIT / PIE DE PÁGINA ---------------- */
+
+.event-page .event-mode-exit {
+    position: relative;
+    z-index: 3;
+
+    margin: 9px auto 0;
+
+    text-align: center;
+}
+
+.event-page .event-mode-exit button {
+    min-height: 30px;
+    padding: 5px 14px;
+    font-size: 0.55rem;
+}
+
+.event-page .event-footer {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 10px;
+    padding: 7px 3px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    color: #714727;
+    border-top: 1px solid rgba(97, 54, 27, 0.26);
+
+    font-size: 0.52rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.event-page .event-footer p {
+    margin: 0;
+    color: #785231;
+    font-size: 0.5rem;
+}
+
+
+/* ============================================================
+   EVENTO EN PANTALLA COMPLETA MODE
+============================================================ */
+
+:fullscreen {
+    background: #0c0403;
+}
+
+:fullscreen .event-body {
+    overflow: hidden;
+}
+
+:fullscreen .event-page {
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    margin: 0;
+    padding: 9px 14px;
+
+    overflow: hidden;
+}
+
+:fullscreen .event-page .event-header {
+    width: min(690px, 78%);
+    min-height: 82px;
+    margin-bottom: 9px;
+    padding: 10px 100px 11px;
+}
+
+:fullscreen .event-page .event-brand-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    font-size: 1.5rem;
+}
+
+:fullscreen .event-page .event-brand h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+:fullscreen .event-page .event-brand p {
+    display: none;
+}
+
+:fullscreen .event-page .event-header-badge {
+    bottom: -12px;
+    padding: 4px 13px;
+    font-size: 0.55rem;
+}
+
+:fullscreen .event-page .event-controls {
+    display: none !important;
+}
+
+:fullscreen .event-page .event-stage {
+    width: min(1180px, 100%);
+    height: calc(100vh - 104px);
+    min-height: 0;
+    margin: 0 auto;
+    padding: 8px 125px 10px;
+
+    overflow: hidden;
+}
+
+:fullscreen .event-page .event-ambient-left {
+    left: 10px;
+    top: 85px;
+}
+
+:fullscreen .event-page .event-ambient-right {
+    right: 8px;
+    top: 75px;
+}
+
+:fullscreen .event-page .event-board {
+    width: min(850px, 100%);
+    height: 100%;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 8px 11px 9px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: visible;
+}
+
+:fullscreen .event-page .event-board-top {
+    flex: 0 0 auto;
+    margin-bottom: 2px;
+}
+
+:fullscreen .event-page .event-board-label,
+:fullscreen .event-page .event-live-indicator {
+    font-size: 0.43rem;
+}
+
+:fullscreen .event-page .event-info {
+    flex: 0 0 auto;
+    margin: 0 8px 5px;
+    padding: 6px 12px 7px;
+}
+
+:fullscreen .event-page .event-info-eyebrow {
+    font-size: 0.37rem;
+}
+
+:fullscreen .event-page .event-game-marquee {
+    gap: 8px;
+}
+
+:fullscreen .event-page .event-game-marquee h2 {
+    font-size: clamp(2.2rem, 4.6vw, 4rem);
+}
+
+:fullscreen .event-page .event-note {
+    font-size: 1.15rem;
+}
+
+:fullscreen .event-page .event-season-ribbon {
+    margin-top: 4px;
+    padding: 3px 14px;
+}
+
+:fullscreen .event-page .event-season-ribbon p {
+    font-size: 0.72rem;
+}
+
+:fullscreen .event-page .event-mode-status {
+    flex: 0 0 auto;
+    margin: 2px auto 4px;
+    padding: 3px 9px;
+}
+
+:fullscreen .event-page .event-leaderboard {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin: 0 8px;
+    padding: 5px 7px 6px;
+
+    overflow: hidden;
+}
+
+:fullscreen .event-page .event-menu-title {
+    min-height: 19px;
+    margin-bottom: 2px;
+    font-size: 0.45rem;
+}
+
+:fullscreen .event-page .event-menu-stamp {
+    width: 27px;
+    height: 27px;
+    font-size: 0.28rem;
+}
+
+:fullscreen .event-page .event-table-container {
+    height: calc(100% - 21px);
+    min-height: 0;
+    overflow: hidden;
+}
+
+:fullscreen .event-page .event-leaderboard table {
+    width: 100%;
+    height: auto;
+    table-layout: fixed;
+}
+
+:fullscreen .event-page .event-leaderboard th {
+    padding: 4px 9px;
+    font-size: 0.48rem;
+}
+
+:fullscreen .event-page .event-leaderboard td {
+    padding: 4px 10px;
+    font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+    line-height: 1.05;
+}
+
+:fullscreen .event-page .event-leaderboard tbody td:nth-child(3) {
+    font-size: clamp(0.75rem, 0.95vw, 0.95rem);
+}
+
+:fullscreen .event-page .event-leaderboard tbody tr:nth-child(n+11) {
+    display: none;
+}
+
+:fullscreen .event-page .mascot-event {
+    right: -98px;
+    bottom: 70px;
+
+    width: clamp(145px, 12vw, 190px);
+}
+
+:fullscreen .event-page .event-score-sign {
+    right: -105px;
+    bottom: 6px;
+
+    width: 86px;
+    padding: 7px 4px;
+
+    border-width: 5px;
+}
+
+:fullscreen .event-page .event-mode-exit {
+    flex: 0 0 auto;
+    margin: 3px auto 0;
+}
+
+:fullscreen .event-page .event-mode-exit button {
+    min-height: 23px;
+    padding: 3px 10px;
+    font-size: 0.43rem;
+}
+
+:fullscreen .event-page .event-footer {
+    flex: 0 0 auto;
+    margin-top: 3px;
+    padding-top: 3px;
+    font-size: 0.4rem;
+}
+
+:fullscreen .event-page .event-footer p {
+    font-size: 0.4rem;
+}
+
+
+/* ============================================================
+   EVENTO - RESPONSIVE
+============================================================ */
+
+@media (max-width: 1180px) {
+
+    .event-page .event-controls {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .event-page .event-control-heading,
+    .event-page .event-control-actions {
+        grid-column: 1 / -1;
+    }
+
+    .event-page .event-control-actions {
+        justify-content: flex-end;
+    }
+
+    .event-page .event-stage {
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    .event-page .mascot-event {
+        right: -78px;
+    }
+
+    .event-page .event-score-sign {
+        right: -88px;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .event-page {
+        width: calc(100% - 18px);
+    }
+
+    .event-page .event-header {
+        width: calc(100% - 18px);
+        min-height: 92px;
+        padding: 13px 18px;
+    }
+
+    .event-page .event-header::before,
+    .event-page .event-header::after {
+        display: none;
+    }
+
+    .event-page .event-brand-icon {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+    }
+
+    .event-page .event-brand h1 {
+        font-size: 2rem;
+    }
+
+    .event-page .event-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .event-page .event-control-heading,
+    .event-page .event-control-actions {
+        grid-column: auto;
+    }
+
+    .event-page .event-control-actions {
+        flex-direction: column;
+    }
+
+    .event-page .event-stage {
+        min-height: 620px;
+        padding: 14px 5px 24px;
+    }
+
+    .event-page .event-ambient {
+        display: none;
+    }
+
+    .event-page .event-board {
+        width: 100%;
+        padding: 10px 8px;
+    }
+
+    .event-page .event-info {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .event-page .event-game-marquee h2 {
+        font-size: clamp(2rem, 11vw, 3.2rem);
+    }
+
+    .event-page .event-note {
+        display: none;
+    }
+
+    .event-page .event-leaderboard {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .event-page .event-leaderboard th:first-child,
+    .event-page .event-leaderboard td:first-child {
+        width: 65px;
+    }
+
+    .event-page .event-leaderboard th:last-child,
+    .event-page .event-leaderboard td:last-child {
+        width: 115px;
+    }
+
+    .event-page .mascot-event,
+    .event-page .event-score-sign {
+        display: none;
+    }
+}
+
+/* ============================================================
+   EVENTO - AJUSTES FINALES
+   Reúne los últimos ajustes aprobados para evitar reglas
+   duplicadas y mantener una sola fuente de verdad.
+============================================================ */
+
+
+/* =========================================
+   LEADERBOARD - POSICIONES Y CENTRADO
+========================================= */
+
+.event-page .event-leaderboard td:first-child {
+    position: relative;
+}
+
+.event-page .event-leaderboard tbody tr:nth-child(1) td:first-child::before,
+.event-page .event-leaderboard tbody tr:nth-child(2) td:first-child::before,
+.event-page .event-leaderboard tbody tr:nth-child(3) td:first-child::before {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+.event-page .event-info,
+.event-page .event-leaderboard {
+    width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-page .event-info {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.event-page .event-leaderboard {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.event-page .event-mode-exit {
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.event-page .event-mode-status {
+    display: none !important;
+}
+
+
+/* =========================================
+   ESCENARIO - ESTILO DE TABERNA
+========================================= */
+
+.event-page .event-stage {
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(171, 92, 36, 0.22),
+            transparent 38%
+        ),
+        linear-gradient(
+            rgba(18, 8, 5, 0.90),
+            rgba(9, 4, 3, 0.98)
+        ),
+        repeating-linear-gradient(
+            0deg,
+            #281108 0,
+            #281108 34px,
+            #33160b 34px,
+            #33160b 37px
+        );
+
+    border-bottom: 14px solid #44200f;
+
+    box-shadow:
+        inset 0 0 95px rgba(0, 0, 0, 0.66),
+        inset 0 15px 35px rgba(112, 55, 22, 0.22),
+        0 18px 40px rgba(0, 0, 0, 0.38);
+}
+
+
+/* =========================================
+   LADO IZQUIERDO - CARTEL SLICE
+========================================= */
+
+.event-page .event-ambient-left {
+    left: 18px;
+    top: 82px;
+    width: 115px;
+    padding: 16px 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #542a16,
+            #261008
+        );
+
+    border: 6px solid #70401f;
+    border-radius: 5px;
+    outline: 2px solid #251006;
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.48);
+
+    text-align: center;
+    transform: rotate(-6deg);
+}
+
+.event-page .event-ambient-left::before,
+.event-page .event-ambient-left::after {
+    content: "";
+    position: absolute;
+    top: -27px;
+    width: 2px;
+    height: 30px;
+    background: #9b6b38;
+}
+
+.event-page .event-ambient-left::before {
+    left: 25px;
+    transform: rotate(25deg);
+}
+
+.event-page .event-ambient-left::after {
+    right: 25px;
+    transform: rotate(-25deg);
+}
+
+.event-page .event-ambient-left span {
+    color: #f0bd51;
+    font-size: 1rem;
+    line-height: 1.1;
+
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================
+   LADO IZQUIERDO - PIZZA BRILLANTE
+========================================= */
+
+.event-page .event-stage::before {
+    content: "🍕";
+    position: absolute;
+    left: 26px;
+    top: 255px;
+    z-index: 2;
+
+    font-size: 3.9rem;
+    transform: rotate(-12deg);
+
+    filter:
+        drop-shadow(0 0 4px #ffce42)
+        drop-shadow(0 0 9px #ff7a22)
+        drop-shadow(0 0 18px #e4361f);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LADO IZQUIERDO - CARTEL TODAY'S SPECIAL
+========================================= */
+
+.event-page .event-ambient-left span:last-child::after {
+    content:
+        "TODAY'S SPECIAL\A ★ ★ ★\A HIGH SCORES\A EXTRA CHEESE\A EXTRA GLORY";
+
+    white-space: pre;
+    position: absolute;
+
+    top: 235px;
+    left: -22px;
+
+    width: 108px;
+    padding: 12px 6px;
+
+    color: #f4cf68;
+
+    background:
+        linear-gradient(
+            180deg,
+            #161b14,
+            #080b08
+        );
+
+    border: 6px solid #71401e;
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.45);
+
+    font-size: 0.56rem;
+    line-height: 1.5;
+    text-align: center;
+
+    transform: rotate(-2deg);
+
+    text-shadow:
+        1px 1px 0 #000;
+}
+
+
+/* =========================================
+   LADO DERECHO - CARTEL HOT & FRESH
+========================================= */
+
+.event-page .event-ambient-right {
+    right: 25px;
+    top: 88px;
+    width: 112px;
+    padding: 15px 9px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #182018,
+            #090d09
+        );
+
+    border: 7px solid #68391c;
+    border-radius: 5px;
+    outline: 2px solid #2d150a;
+
+    box-shadow:
+        0 9px 17px rgba(0, 0, 0, 0.46);
+
+    text-align: center;
+    transform: rotate(3deg);
+}
+
+.event-page .event-ambient-right small,
+.event-page .event-ambient-right strong {
+    color: #a8dc79;
+    font-size: 0.8rem;
+    font-weight: 900;
+
+    text-shadow:
+        0 0 7px rgba(113, 223, 92, 0.35);
+}
+
+.event-page .event-ambient-right b {
+    margin-top: 7px;
+    color: #ff6b4e;
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   LADO DERECHO - SELLO SPICYCRUST TAVERN
+========================================= */
+
+.event-page .event-stage::after {
+    content:
+        "SPICY\A CRUST\A TAVERN\A ★ ★";
+
+    white-space: pre;
+    position: absolute;
+
+    right: 31px;
+    top: 285px;
+    z-index: 2;
+
+    width: 94px;
+    height: 94px;
+
+    display: grid;
+    place-items: center;
+
+    padding-top: 5px;
+
+    color: #e5ad49;
+
+    background:
+        radial-gradient(
+            circle,
+            #5d3218 0%,
+            #32170c 68%
+        );
+
+    border: 7px solid #74401d;
+    border-radius: 50%;
+
+    box-shadow:
+        0 7px 14px rgba(0, 0, 0, 0.52),
+        inset 0 0 0 3px rgba(225, 169, 70, 0.16);
+
+    font-size: 0.64rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+
+    text-align: center;
+    transform: rotate(-2deg);
+
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.7);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MASCOTA
+========================================= */
+
+.event-page .mascot-event {
+    right: -142px;
+    bottom: 70px;
+
+    width: clamp(195px, 16vw, 265px);
+
+    z-index: 12;
+
+    transform: rotate(1deg);
+}
+
+.event-page .mascot-event img {
+    filter:
+        drop-shadow(0 11px 9px rgba(0, 0, 0, 0.48));
+}
+
+
+/* =========================================
+   CARTEL JUNTO A LA MASCOTA
+========================================= */
+
+.event-page .event-score-sign {
+    right: -150px;
+    bottom: 1px;
+
+    width: 118px;
+    padding: 10px 7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171b16,
+            #080b08
+        );
+
+    border: 8px solid #61351c;
+
+    box-shadow:
+        0 10px 17px rgba(0, 0, 0, 0.48);
+
+    transform: rotate(3deg);
+}
+
+.event-page .event-score-sign strong,
+.event-page .event-score-sign b {
+    color: #e9ad3f;
+    font-size: 0.9rem;
+}
+
+.event-page .event-score-sign span,
+.event-page .event-score-sign em {
+    color: #f2d99c;
+}
+
+
+/* =========================================
+   TABLERO - SOMBRA Y MOSTRADOR
+========================================= */
+
+.event-page .event-board {
+    box-shadow:
+        0 9px 0 #291006,
+        0 19px 38px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(239, 177, 69, 0.08),
+        inset 0 0 0 2px rgba(255, 249, 222, 0.55);
+}
+
+.event-page .event-stage > .event-board::after {
+    content: "";
+    position: absolute;
+
+    left: -130px;
+    right: -130px;
+    bottom: -35px;
+
+    height: 23px;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            180deg,
+            #613018,
+            #32170c
+        );
+
+    border-top: 3px solid #7c4624;
+
+    box-shadow:
+        0 -5px 13px rgba(0, 0, 0, 0.36);
+}
+
+
+/* =========================================
+   PANTALLA COMPLETA
+========================================= */
+
+:fullscreen .event-page .event-board {
+    transform: none;
+}
+
+:fullscreen .event-page .event-info,
+:fullscreen .event-page .event-leaderboard {
+    width: calc(100% - 16px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:fullscreen .event-page .event-info {
+    margin-bottom: 5px;
+}
+
+:fullscreen .event-page .event-mode-exit {
+    position: relative;
+    left: 0;
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+:fullscreen .event-page .event-ambient-left {
+    left: 18px;
+    top: 78px;
+}
+
+:fullscreen .event-page .event-ambient-right {
+    right: 18px;
+    top: 78px;
+}
+
+:fullscreen .event-page .event-stage::before {
+    left: 18px;
+    top: 225px;
+    font-size: 3.5rem;
+}
+
+:fullscreen .event-page .event-ambient-left span:last-child::after {
+    left: -18px;
+    top: 220px;
+    width: 102px;
+}
+
+:fullscreen .event-page .event-stage::after {
+    right: 24px;
+    top: 245px;
+
+    width: 82px;
+    height: 82px;
+
+    font-size: 0.55rem;
+}
+
+:fullscreen .event-page .mascot-event {
+    right: -115px !important;
+    bottom: 155px !important;
+
+    width: clamp(165px, 13vw, 220px);
+}
+
+:fullscreen .event-page .event-score-sign {
+    right: -136px;
+    bottom: 3px;
+    width: 103px;
+}
+
+
+/* =========================================
+   RESPONSIVE - PANTALLAS MEDIAS
+========================================= */
+
+@media (max-width: 1180px) {
+
+    .event-page .event-stage::before,
+    .event-page .event-stage::after,
+    .event-page .event-ambient-left span:last-child::after {
+        display: none;
+    }
+
+    .event-page .event-ambient-left,
+    .event-page .event-ambient-right {
+        opacity: 0.88;
+    }
+
+    .event-page .mascot-event {
+        right: -105px;
+    }
+
+    .event-page .event-score-sign {
+        right: -110px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+========================================= */
+
+@media (max-width: 820px) {
+
+    .event-page .event-info,
+    .event-page .event-leaderboard,
+    :fullscreen .event-page .event-info,
+    :fullscreen .event-page .event-leaderboard {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .event-page .event-ambient-left,
+    .event-page .event-ambient-right {
+        display: none;
+    }
+}
+
+
+/* ============================================================
+   EVENTO - OCULTAR PANTALLA COMPLETA Y MODO EVENTO EN MÓVIL
+============================================================ */
+
+@media (max-width: 820px) {
+    .event-page #fullscreenButton,
+    .event-page #eventModeButton {
+        display: none !important;
+    }
+
+    /* No dejar espacio vacío donde estaban los botones */
+    .event-page .event-control-actions {
+        display: none !important;
+    }
+}
